@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PostsService {
@@ -17,5 +18,9 @@ public class PostsService {
 
     public void save(Posts posts) {
         repo.save(posts);
+    }
+    public Posts get(int id){
+        Optional<Posts>result=repo.findById(id);
+        return result.get();
     }
 }

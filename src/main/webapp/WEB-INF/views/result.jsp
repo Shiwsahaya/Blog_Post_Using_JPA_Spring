@@ -21,6 +21,7 @@
 </h2>
 <%= value.getBody()%>
 <br/>
+<a href="edit?id=<%=value.getId()%>">Edit</a>
 <%}%>
 </body>
 </html>

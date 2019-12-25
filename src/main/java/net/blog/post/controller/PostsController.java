@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -37,5 +38,13 @@ public class PostsController {
     public String savePost(@ModelAttribute("posts") Posts posts){
         service.save(posts);
         return "redirect:/";
+    }
+
+    @RequestMapping("edit")
+    public ModelAndView editPosts(@RequestParam int id){
+        ModelAndView modelAndView=new ModelAndView("editPost");
+        Posts posts=service.get(id);
+        modelAndView.addObject("posts",posts);
+        return modelAndView;
     }
 }
