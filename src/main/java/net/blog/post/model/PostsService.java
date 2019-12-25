@@ -23,4 +23,7 @@ public class PostsService {
         Optional<Posts>result=repo.findById(id);
         return result.get();
     }
+    public void delete(int id){
+        repo.deleteById(id);
+    }
 }
