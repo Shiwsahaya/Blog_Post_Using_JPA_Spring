@@ -1,5 +1,6 @@
-package net.blog.post.model;
+package net.blog.post.service;
 
+import net.blog.post.model.Posts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
