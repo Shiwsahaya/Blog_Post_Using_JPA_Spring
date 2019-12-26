@@ -13,7 +13,7 @@
 </head>
 
 <body>
-<h3><a href="new">New Post</a></h3>
+<h3><a href="add">New Post</a></h3>
 <% List<Posts> results = (List<Posts>) request.getAttribute("listCustomer");%>
 <% for (Posts value : results) {%>
 <h2>
@@ -21,8 +21,8 @@
 </h2>
 <%= value.getBody()%>
 <br/>
-<a href="edit?id=<%=value.getId()%>">Edit</a><br>
-<a href="delete?id=<%=value.getId()%>">Delete</a>
+<a href="edit/<%=value.getId()%>">Edit</a><br>
+<a href="delete/<%=value.getId()%>">Delete</a>
 <%}%>
 </body>
 </html>

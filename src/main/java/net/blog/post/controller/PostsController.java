@@ -4,10 +4,7 @@ import net.blog.post.model.Posts;
 import net.blog.post.service.PostsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -24,30 +21,42 @@ public class PostsController {
         ModelAndView mav = new ModelAndView("result");
         List<Posts> listCustomer = service.listAll();
         mav.addObject("listCustomer", listCustomer);
-        System.out.println(listCustomer.get(0).getTitle());
         return mav;
     }
 
-    @RequestMapping("/new")
+    @RequestMapping("/add")
     public String newPost(Map<String,Object>model){
         model.put("posts",new Posts());
         return "new";
     }
 
+    @RequestMapping(value = "/edit/save", method = RequestMethod.POST)
+    public String editSave(@ModelAttribute("posts") Posts posts){
+        service.save(posts);
+        return "redirect:/";
+    }
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String savePost(@ModelAttribute("posts") Posts posts){
         service.save(posts);
         return "redirect:/";
     }
 
-    @RequestMapping("edit")
-    public ModelAndView editPosts(@RequestParam int id){
+    @RequestMapping("/edit/{id}")
+    public ModelAndView editPosts(@PathVariable("id") int id){
         ModelAndView modelAndView=new ModelAndView("editPost");
         Posts posts=service.get(id);
         modelAndView.addObject("posts",posts);
         return modelAndView;
     }
-    @RequestMapping("/delete")
+
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    public ModelAndView delete(@PathVariable("id") int id){
+        ModelAndView modelAndView=new ModelAndView("deletePost");
+        Posts posts=service.get(id);
+        modelAndView.addObject("posts",posts);
+        return modelAndView;
+    }
+    @RequestMapping("/delete/deleteConfirm")
     public String deletePost(@RequestParam int id){
         service.delete(id);
         return "redirect:/";
