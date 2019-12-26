@@ -1,5 +1,6 @@
 package net.blog.post.service;
 
+import net.blog.post.Repository.PostsRepository;
 import net.blog.post.model.Posts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,10 +21,12 @@ public class PostsService {
     public void save(Posts posts) {
         repo.save(posts);
     }
+
     public Posts get(int id){
         Optional<Posts>result=repo.findById(id);
         return result.get();
     }
+
     public void delete(int id){
         repo.deleteById(id);
     }

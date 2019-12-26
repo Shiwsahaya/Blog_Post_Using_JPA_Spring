@@ -10,6 +10,9 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        .error{color: red}
+    </style>
 </head>
 <body>
 Create Post
@@ -17,7 +20,7 @@ Create Post
     <table border="0" cellpadding="5">
     <tr>
         <td>Title:</td>
-        <td><form:input path="title"/></td>
+        <td><form:input path="title" cssClass="error"/></td>
     </tr>
 
     <tr>

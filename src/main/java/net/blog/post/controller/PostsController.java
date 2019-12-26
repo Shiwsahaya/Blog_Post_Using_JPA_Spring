@@ -56,7 +56,7 @@ public class PostsController {
         modelAndView.addObject("posts",posts);
         return modelAndView;
     }
-    @RequestMapping("/delete/deleteConfirm")
+    @RequestMapping("/delete/delete-confirm")
     public String deletePost(@RequestParam int id){
         service.delete(id);
         return "redirect:/";

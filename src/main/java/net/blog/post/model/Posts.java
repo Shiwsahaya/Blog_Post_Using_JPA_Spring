@@ -3,6 +3,7 @@ package net.blog.post.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Posts {
@@ -34,6 +35,8 @@ private  int id;
         this.body = email;
     }
 
+    @NotNull(message = "is required")
     private String title;
-private String body;
+    @NotNull(message = "is required")
+    private String body;
 }
