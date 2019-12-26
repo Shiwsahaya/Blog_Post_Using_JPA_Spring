@@ -401,6 +401,7 @@
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/blog/post/controller/PostsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/blog/post/controller/PostsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/blog/post/model/Posts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/blog/post/model/Posts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/blog/post/service/PostsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/blog/post/Repository/PostsRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/blog/post/service/PostsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/blog/post/service/PostsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/deletePost.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/deletePost.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/new.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/new.jsp" afterDir="false" />
@@ -701,7 +702,7 @@
       <workItem from="1577249058863" duration="15131000" />
       <workItem from="1577297699530" duration="3034000" />
       <workItem from="1577301197036" duration="1851000" />
-      <workItem from="1577334860416" duration="8093000" />
+      <workItem from="1577334860416" duration="8936000" />
     </task>
     <servers />
   </component>
