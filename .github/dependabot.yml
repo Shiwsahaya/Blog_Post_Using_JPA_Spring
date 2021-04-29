@@ -1,0 +1,23 @@
+version: 2
+updates:
+- package-ecosystem: maven
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "23:30"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: org.hibernate:hibernate-entitymanager
+    versions:
+    - 5.4.27.Final
+    - 5.4.28.Final
+    - 5.4.29.Final
+  - dependency-name: org.apache.logging.log4j:log4j-slf4j-impl
+    versions:
+    - 2.14.0
+  - dependency-name: org.hibernate:hibernate-validator
+    versions:
+    - 7.0.0.Alpha3
+  - dependency-name: org.springframework:spring-webmvc
+    versions:
+    - 5.2.7.RELEASE
